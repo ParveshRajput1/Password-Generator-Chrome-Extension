@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+}
+
+body {}
+
+.password__container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.password_copText {
+  padding: 5px;
+  border: 1px dashed blueviolet;
+  border-top-left-radius: 15px;
+  background-color: blueviolet;
+  color: white;
+}
+
+.password_copyIcon {
+  border-top: 1px dashed blue;
+  border-right: 1px dashed blue;
+  border-bottom: 1px dashed blue;
+  padding: 5px !important;
+}
+
+.password_copyStatus {
+  background-color: yellowgreen;
+  margin-left: 8px;
+  padding: 5px;
+  color: white;
+  border-radius: 15px;
+  font-size: 12px;
+}
