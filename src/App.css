@@ -1,37 +1,107 @@
+/* Reset and base */
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-body {}
-
-.password__container {
-  margin-top: 20px;
-  width: 100%;
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Container box */
+.password__container {
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 25px 30px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+/* Title */
+.password__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Input field */
 .password_copText {
-  padding: 5px;
-  border: 1px dashed blueviolet;
-  border-top-left-radius: 15px;
-  background-color: blueviolet;
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #8a2be2;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9ff;
+  transition: 0.3s;
+}
+
+.password_copText:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 6px rgba(106, 17, 203, 0.5);
+}
+
+/* Buttons container */
+.password__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Buttons */
+.password_copyIcon,
+.password_copyStatus {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
   color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
 .password_copyIcon {
-  border-top: 1px dashed blue;
-  border-right: 1px dashed blue;
-  border-bottom: 1px dashed blue;
-  padding: 5px !important;
+  background-color: #6a11cb;
+}
+
+.password_copyIcon:hover {
+  background-color: #5013b1;
 }
 
 .password_copyStatus {
-  background-color: yellowgreen;
-  margin-left: 8px;
-  padding: 5px;
-  color: white;
-  border-radius: 15px;
-  font-size: 12px;
+  background-color: #32cd32;
+}
+
+.password_copyStatus:hover {
+  background-color: #28a428;
+}
+
+/* Copy success animation */
+.password_copyStatus.copied {
+  background-color: #ffa500;
+  color: #fff;
+}
+
+/* Footer note (optional) */
+.password__footer {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 8px;
 }
