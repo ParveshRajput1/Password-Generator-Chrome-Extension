@@ -31,7 +31,7 @@ const PasswordGenerator = () => {
         type="text"
         className="password_copText"
         value={password}
-        placeholder="Click 'Generate' to create password"
+        placeholder="Press The Button Below"
         readOnly
       />
 
