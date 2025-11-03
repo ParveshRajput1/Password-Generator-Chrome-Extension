@@ -66,7 +66,7 @@ function App() {
 
         <div className="password__container">
           <span className="password_copText">
-            {password || "Click Generate"}
+            {password || "Press Button Below"}
           </span>
           <span className="password_copyIcon" onClick={copyPassword}>
             <FileCopyIcon
