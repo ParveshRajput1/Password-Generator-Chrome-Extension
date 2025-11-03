@@ -21,19 +21,13 @@ const useStyles = makeStyles({
     fontWeight: 600,
     marginBottom: 10,
   },
-  passwordBox: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "8px",
-    marginTop: 15,
-  },
 });
 
 function App() {
   const classes = useStyles();
   const [password, setPassword] = React.useState("");
   const [copied, setCopied] = React.useState(false);
+  const [showCopy, setShowCopy] = React.useState(false); // 👈 control icon visibility
 
   // 🧠 Password Generator Logic
   const generatePassword = () => {
@@ -45,6 +39,7 @@ function App() {
     }
     setPassword(newPassword);
     setCopied(false);
+    setShowCopy(true); // 👈 show icon after generating password
   };
 
   const copyPassword = () => {
@@ -68,14 +63,22 @@ function App() {
           <span className="password_copText">
             {password || "Press Button Below"}
           </span>
-          <span className="password_copyIcon" onClick={copyPassword}>
-            <FileCopyIcon
-              style={{ fontSize: 18, cursor: "pointer", color: "#6a11cb" }}
-            />
-          </span>
-          {copied && (
-            <span className="password_copyStatus">Copied!</span>
+
+          {/* 👇 Only show Copy Icon after password generated */}
+          {showCopy && (
+            <span className="password_copyIcon" onClick={copyPassword}>
+              <FileCopyIcon
+                style={{
+                  fontSize: 18,
+                  cursor: "pointer",
+                  color: copied ? "#00C853" : "#6a11cb", // green when copied
+                  transition: "color 0.3s ease",
+                }}
+              />
+            </span>
           )}
+
+          {copied && <span className="password_copyStatus">Copied!</span>}
         </div>
 
         <div className="password__buttons">
